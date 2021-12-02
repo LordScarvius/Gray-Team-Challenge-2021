@@ -18,8 +18,8 @@ public final class Constants
 
     // JOYSTICKS
     public static final int GAMEPAD = 0;
-    public static final int LEFT_STICK = 2;
-    public static final int RIGHT_STICK 1;
+    public static final int LEFT_STICK = 1;
+    public static final int RIGHT_STICK = 0;
 
     // JOYSTICK BUTTONS
     public static final int INTAKE_BTN = 0;
