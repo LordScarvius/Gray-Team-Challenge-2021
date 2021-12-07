@@ -36,8 +36,8 @@ public final class Constants
 
     // intake motor
     public static final int INTAKE = 5; 
-    // roller conveyor output
-    public static final int OUTPUT = 6;
+    // chain to bring the intake box up
+    public static final int CHAIN = 6;
     // latch
     public static final int LATCH = 7; 
     //again, default values; drivetrain not set up yet

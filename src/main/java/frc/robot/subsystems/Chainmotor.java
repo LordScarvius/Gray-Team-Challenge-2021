@@ -10,19 +10,19 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
-public class Intake extends SubsystemBase {
-  /** Creates a new Intake. */
+public class Chainmotor extends SubsystemBase {
+  /** Creates a new Chainmotor. */
 
-  private final CANSparkMax intake;
+  private final CANSparkMax chainmotor;
 
-  public Intake() 
+  public Chainmotor() 
   {
-    this.intake = new CANSparkMax(Constants.INTAKE, MotorType.kBrushless);
+    this.chainmotor = new CANSparkMax(Constants.CHAIN, MotorType.kBrushless);
   }
 
-  public void runIntake(double speed)
+  public void lift(boolean up)
   {
-    intake.set(speed);
+    //pass
   }
 
   @Override
