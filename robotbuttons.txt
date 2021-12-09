@@ -1,0 +1,7 @@
+intakeIn - left, 0
+intakeOut - right, 14
+
+chainLift - right, 10
+chainLower - right, 15
+
+endgameLatch - right, 3

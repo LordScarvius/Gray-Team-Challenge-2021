@@ -4,20 +4,18 @@
 
 package frc.robot.subsystems;
 
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.MotorType;
-
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Chain extends SubsystemBase {
   /** Creates a new Chainmotor. */
 
-  private final CANSparkMax chain;
+  private final Spark chain;
 
   public Chain() 
   {
-    this.chain = new CANSparkMax(Constants.CHAIN, MotorType.kBrushless);
+    this.chain = new Spark(Constants.CHAIN);
     // adding motor for chain
   }
 
