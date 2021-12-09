@@ -21,18 +21,9 @@ public class Chain extends SubsystemBase {
     // adding motor for chain
   }
 
-  public void lift()
+  public void runChain(double speed)
   {
-    chain.set(1);
-    wait(10);
-    chain.set(0);
-  }
-
-  public void lower()
-  {
-    chain.set(-1);
-    wait(10);
-    chain.set(0);
+    chain.set(speed);
   }
 
   @Override
