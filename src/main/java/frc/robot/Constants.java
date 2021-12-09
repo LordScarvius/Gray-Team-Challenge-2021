@@ -24,8 +24,10 @@ public final class Constants
     // JOYSTICK BUTTONS
     public static final int INTAKE_BTN = 0;
     public static final int OUTPUT_BTN = 1; 
-    public static final int LATCH_IN_BTN = 2;
-    public static final int LATCH_OUT_BTN = 3; 
+    public static final int CHAIN_LIFT_BTN = 2;
+    public static final int CHAIN_LOWER_BTN = 3; 
+    public static final int LATCH_ACTIVATE_BTN = 4;
+    public static final int LATCH_DEACTIVATE_BTN = 5;
     //default values as usual
 
     // Motors 

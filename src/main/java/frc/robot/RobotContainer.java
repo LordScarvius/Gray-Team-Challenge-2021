@@ -30,7 +30,7 @@ public class RobotContainer
   private final Joystick left = new Joystick(0);
   private final Joystick right = new Joystick(1);
 
-  private final JoystickButton intakeBtn, chainLiftBtn, chainLowerBtn;
+  private final JoystickButton intakeIn, intakeOut, chainLift, chainLower;
    
   private final Drive drive = new Drive(m_drive, gamepad.getRawAxis(0), gamepad.getRawAxis(1)); 
 
@@ -54,8 +54,17 @@ public class RobotContainer
    */
   private void configureButtonBindings() 
   {
-    intakeBtn = new JoystickButton(left, 0);
-    intakeBtn.whenPressed(new InstantCommand(() -> m_intake.runIntake(-0.5));
+    intakeIn = new JoystickButton(left, 0);
+      intakeIn.whileHeld(new StartEndCommand(() -> m_intake.runIntake(-0.25), () -> m_intake.runIntake(0), m_intake));
+
+    intakeOut = new JoystickButton(left, 1);
+      intakeOut.whileHeld(new StartEndCommand(() -> m_intake.runIntake(1), () -> m_intake.runIntake(0), m_intake));
+
+    chainLift = new JoystickButton(right, 0);
+      chainLift.whileHeld(new StartEndCommand(() -> m_chain.runChain(1), () -> m_chain.runChain(0), m_chain))
+
+    chainLower = new JoystickButton(right, 1);
+      chainLower.whileHeld(new StartEndCommand(() -> m_chain.runChain(-1), () -> m_chain.runChain(0), m_chain))
 
     )
   }
