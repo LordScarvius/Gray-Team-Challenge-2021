@@ -16,25 +16,11 @@ package frc.robot;
 public final class Constants 
 {
 
-    // JOYSTICKS
-    public static final int GAMEPAD = 0;
-    public static final int LEFT_STICK = 1;
-    public static final int RIGHT_STICK = 0;
-
-    // JOYSTICK BUTTONS
-    public static final int INTAKE_BTN = 0;
-    public static final int OUTPUT_BTN = 1; 
-    public static final int CHAIN_LIFT_BTN = 2;
-    public static final int CHAIN_LOWER_BTN = 3; 
-    public static final int LATCH_ACTIVATE_BTN = 4;
-    public static final int LATCH_DEACTIVATE_BTN = 5;
-    //default values as usual
-
     // Motors 
     public static final int FRONTR = 1; 
     public static final int BACKR = 2; 
-    public static final int FRONTL = 3;
-    public static final int BACKL = 4; // default values rn
+    public static final int FRONTL = 0;
+    public static final int BACKL = 3; 
 
     // intake motor
     public static final int INTAKE = 5; 
