@@ -18,6 +18,7 @@ public class Chainmotor extends SubsystemBase {
   public Chainmotor() 
   {
     this.chainmotor = new CANSparkMax(Constants.CHAIN, MotorType.kBrushless);
+    // adding motor for chain
   }
 
   public void lift(boolean up)
