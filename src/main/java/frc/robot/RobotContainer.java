@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.commands.Drive;
 import frc.robot.subsystems.Chain;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.EndgameLatch;
 import frc.robot.subsystems.Intake;
 
 /**
@@ -26,13 +27,14 @@ public class RobotContainer
   private final Drivetrain m_drive = new Drivetrain();
   private final Intake m_intake = new Intake();
   private final Chain m_chain = new Chain();
+  private final EndgameLatch m_latch = new EndgameLatch();
 
   private final Joystick left = new Joystick(0);
   private final Joystick right = new Joystick(1);
 
-  private final JoystickButton intakeIn, intakeOut, chainLift, chainLower;
+  private JoystickButton intakeIn, intakeOut, chainLift, chainLower, endgameLatch;
    
-  private final Drive drive = new Drive(m_drive, gamepad.getRawAxis(0), gamepad.getRawAxis(1)); 
+  private final Drive drive = new Drive(m_drive, -left.getRawAxis(1), right.getRawAxis(1)); 
 
 
 
@@ -40,7 +42,7 @@ public class RobotContainer
   // private final ExampleCommand m_autoCommand = new ExampleCommand();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
-  public RobotContainer() {
+  public RobotContainer() { 
     // Configure the button bindings
     configureButtonBindings();
     m_drive.setDefaultCommand(drive);
@@ -65,6 +67,9 @@ public class RobotContainer
 
     chainLower = new JoystickButton(right, 1);
       chainLower.whileHeld(new StartEndCommand(() -> m_chain.runChain(-1), () -> m_chain.runChain(0), m_chain))
+
+    endgameLatch = new JoystickButton(right, 2);
+      endgameLatch.whenPressed(new InstantCommand(() -> m_latch.toggle(), m_latch));
 
     )
   }
