@@ -9,7 +9,9 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.Drive;
+import frc.robot.subsystems.Chain;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Intake;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -21,8 +23,13 @@ public class RobotContainer
 {
   // The robot's subsystems and commands are defined here...
   private final Drivetrain m_drive = new Drivetrain();
+  private final Intake intake = new Intake();
+  private final Chain chain = new Chain();
+
   private final Joystick gamepad = new Joystick(Constants.GAMEPAD);
+   
   private final Drive drive = new Drive(m_drive, gamepad.getRawAxis(0), gamepad.getRawAxis(1)); 
+
 
 
 
