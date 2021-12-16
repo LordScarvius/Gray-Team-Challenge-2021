@@ -15,7 +15,7 @@ public class EndgameLatch extends SubsystemBase {
 
   public EndgameLatch() 
   {
-      // latch = new Solenoid(Constants.LATCH);
+      latch = new Solenoid(Constants.LATCH);
   }
 
 
