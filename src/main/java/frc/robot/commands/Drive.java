@@ -4,23 +4,27 @@
 
 package frc.robot.commands;
 
+import java.util.function.DoubleSupplier;
+
+import com.fasterxml.jackson.databind.ser.std.NumberSerializers.DoubleSerializer;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Drivetrain;
 
 public class Drive extends CommandBase {
 
-  private Drivetrain m_drive;
-  private double leftSpeed, rightSpeed; 
+  private final Drivetrain m_drive;
+  private final DoubleSupplier left, right; 
   
   /** Creates a new Drive. */
-  public Drive(Drivetrain m_drive, double leftSpeed, double rightSpeed) 
+  public Drive(Drivetrain m_drive, DoubleSupplier left, DoubleSupplier right) 
   {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(m_drive);
 
     this.m_drive = m_drive;
-    this.leftSpeed = leftSpeed;
-    this.rightSpeed = rightSpeed;
+    this.left = left;
+    this.right = right;
 
   }
 
@@ -32,15 +36,12 @@ public class Drive extends CommandBase {
   @Override
   public void execute() 
   {
-    m_drive.tankDrive(leftSpeed, rightSpeed);
+    m_drive.tankDrive(left.getAsDouble(), right.getAsDouble());
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) 
-  {
-    m_drive.tankDrive(0, 0);
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override
