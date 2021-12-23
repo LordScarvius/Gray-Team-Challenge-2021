@@ -34,7 +34,7 @@ public class RobotContainer
   private final Joystick left = new Joystick(0);
   private final Joystick right = new Joystick(1);
 
-  private JoystickButton intakeIn, intakeOut, chainLift, chainLower, endgameLatch;
+  private JoystickButton intakeIn, intakeOut, chainLift, chainLower, latchTurn, latchReset;
    
   private final Drive drive = new Drive(m_drive, () -> (left.getRawAxis(1)), () -> (right.getRawAxis(1))); 
 
@@ -66,8 +66,11 @@ public class RobotContainer
     chainLower = new JoystickButton(right, 16);
       chainLower.whileHeld(new StartEndCommand(() -> m_chain.runChain(-1), () -> m_chain.runChain(0), m_chain));
 
-    endgameLatch = new JoystickButton(right, 13);
-      endgameLatch.whenPressed(new InstantCommand(() -> m_latch.toggle(), m_latch));
+    latchTurn = new JoystickButton(right, 12);
+      latchTurn.whenPressed(new InstantCommand(() -> m_latch.setPos(90), m_latch));
+
+    latchReset = new JoystickButton(right, 15);
+      latchReset.whenPressed(new InstantCommand(() -> m.latch.set(0), m_latch));
 
   }
   

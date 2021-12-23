@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -11,17 +12,16 @@ import frc.robot.Constants;
 public class EndgameLatch extends SubsystemBase {
   /** Creates a new EndgameLatch. */
 
-  public Solenoid latch;
+  public Servo latch;
 
   public EndgameLatch() 
   {
-      latch = new Solenoid(Constants.LATCH);
+      latch = new Servo(Constants.LATCH);
   }
 
-
-  public void toggle()
+  public void setPos(double deg)
   {
-    latch.toggle();
+    latch.setPosition(deg);
   }
   
   @Override
