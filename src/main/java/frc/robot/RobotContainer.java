@@ -54,19 +54,19 @@ public class RobotContainer
    */
   private void configureButtonBindings() 
   {
-    intakeIn = new JoystickButton(left, 0);
+    intakeIn = new JoystickButton(left, 1);
       intakeIn.whileHeld(new StartEndCommand(() -> m_intake.runIntake(-0.25), () -> m_intake.runIntake(0), m_intake));
 
-    intakeOut = new JoystickButton(right, 14);
+    intakeOut = new JoystickButton(right, 1);
       intakeOut.whileHeld(new StartEndCommand(() -> m_intake.runIntake(1), () -> m_intake.runIntake(0), m_intake));
 
-    chainLift = new JoystickButton(right, 10);
+    chainLift = new JoystickButton(right, 11);
       chainLift.whileHeld(new StartEndCommand(() -> m_chain.runChain(1), () -> m_chain.runChain(0), m_chain));
 
-    chainLower = new JoystickButton(right, 15);
+    chainLower = new JoystickButton(right, 16);
       chainLower.whileHeld(new StartEndCommand(() -> m_chain.runChain(-1), () -> m_chain.runChain(0), m_chain));
 
-    endgameLatch = new JoystickButton(right, 3);
+    endgameLatch = new JoystickButton(right, 13);
       endgameLatch.whenPressed(new InstantCommand(() -> m_latch.toggle(), m_latch));
 
   }
