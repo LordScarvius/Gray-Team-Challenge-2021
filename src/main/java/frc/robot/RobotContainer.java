@@ -36,7 +36,7 @@ public class RobotContainer
 
   private JoystickButton intakeIn, intakeOut, chainLift, chainLower, endgameLatch;
    
-  private final Drive drive = new Drive(m_drive, () -> (-1 * left.getRawAxis(1)), () -> (right.getRawAxis(1))); 
+  private final Drive drive = new Drive(m_drive, () -> (left.getRawAxis(1)), () -> (right.getRawAxis(1))); 
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
