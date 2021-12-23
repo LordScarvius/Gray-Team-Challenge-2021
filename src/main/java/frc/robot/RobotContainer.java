@@ -70,7 +70,7 @@ public class RobotContainer
       latchTurn.whenPressed(new InstantCommand(() -> m_latch.setPos(90), m_latch));
 
     latchReset = new JoystickButton(right, 15);
-      latchReset.whenPressed(new InstantCommand(() -> m.latch.set(0), m_latch));
+      latchReset.whenPressed(new InstantCommand(() -> m_latch.setPos(0), m_latch));
 
   }
   

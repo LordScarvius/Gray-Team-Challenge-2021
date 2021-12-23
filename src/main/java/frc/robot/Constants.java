@@ -27,7 +27,7 @@ public final class Constants
     // chain to bring the intake box up
     public static final int CHAIN = 5;
     // latch
-    public static final int LATCH = 0; 
+    public static final int LATCH = 6; 
     //again, default values; drivetrain not set up yet
 
 
